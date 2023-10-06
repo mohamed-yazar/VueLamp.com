@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+      
+    
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" width="130px">
+            </div>
+            <ul >
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#abouting">About</a></li>
+                <li><a href="#connect">Contact</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <div class="productdetails">
+        <div class="set">
+            <div class="productimage">
+
+                <img src="https://images.offerup.com/C6VhljuyxKkSk0XgPUTKuq8NZzI=/1440x1920/a809/a8093734e5da407f8c80ef445e04d731.jpg">
+
+         </div>
+            <div class="others">
+              <h3 id="a">Beast Lamp</h3>
+              <h3 id="amount">80.00 <label>  $</label></h3>
+              <p>Quantity :  <input type="number" id="Quantity"></p>
+              <button onclick="openpopdetail()">Buy Now</button>
+               <h3 id="det">Product details</h3>
+              <p id="para">It’s better to light a candle than curse the dark Pointing to another world will never stop vice among us;
+                shedding light over this world can alone help us ,
+                How far that little candle throws his beams! So shines a good deed in a weary world ,
+                Your need for acceptance can make you invisible in this world. Don't let anything stand in the way of the light that shines through this form. Risk being seen in all of your glory</p>
+            </div>
+        </div>
+        <div class="heading" id="mark">
+            <p>Latest Collection are ,</p>
+        </div>
+        <div class="divides" class="dividesnone">
+            <div class="div1">
+                <a href="productdetails20.html"><img src="images/img4.jpg" width="100%" height="100%"></a>
+                <p>Luxury bulb</p>
+                   <p class="rate">1000$</p>
+            </div>
+            <div class="div2">
+                <a href="productdetails18.html"><img src="images/img8.png" width="100%" height="100%"></a>
+                <p>Customized wall design</p>
+                   <p class="rate">2999$</p>
+            </div>
+            <div class="div3">
+               <a href="productdetails10.html"> <img src="images/img12.jpg" width="100%" height="100%"></a>
+                <p>Box fall celling light</p>
+                   <p class="rate">3400$</p>
+            </div>
+            <div class="div4">
+               <a href="productdetails17.html"> <img src="images/img18.jpg" width="100%" height="100%"></a>
+                <p>LED Light</p>
+                   <p class="rate">20$</p>
+            </div>
+            </div>
+
+
+
+ <div class="contact" id="below">
+        <h3>Contact</h3>
+        <h2>Where you can find us</h2>
+        <div class="combine" id="connect">
+        <div class="maplogo">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="address">
+            <p>120-240 Rio de Janerio - State of Rio de Janerio, Brazil<p></p>
+        </div>
+    </div>
+        <a href="https://www.google.com/maps/dir/9.0915285,77.4491043/ya+Azar+enterprises,+1%2F214+kamarajar+street+omr+kelambakkam,+Chennai,+Tamil+Nadu+603103/@10.9921417,76.1915953,7z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3a525094f1b314b3:0x1f069684f78d94ca!2m2!1d80.2135053!2d12.7863614?entry=ttu"><img src="images/map.png"></a>
+    </div>
+    <div class="popup" id="popup">
+        <img src="images/tick.jpeg" width="90px">
+        <h2>Thank You</h2>
+        <p>Your order has been Successfully Submitted.<br>Thanks !</p>
+        <button type="button" onclick="closepopup()"  >OK</button>
+       </div>
+       <div class="popdetails" id="popdetails">
+        <p onclick="closepopdetail()">X</p>
+        <h3>Register</h3>
+       <form >
+       <input type="text" placeholder="Enter your name" id="name" ><br>
+       <input type="email" placeholder="Enter your email"id="email" ><br>
+       <input type="text" placeholder="Enter your number" id="number"><br>
+       <label>District :</label>
+       <select name="state" class="state" id="state" >
+        <option>Chennai</option>
+        <option>Tirunelveli</option>
+        <option>Tenkasi</option>
+        <option>Tiruchy</option>
+        <option>Theni</option>
+        <option>Madurai</option>
+        <option>Sivakasi</option>
+        <option>Dindigul</option>
+       </select><br>
+       <input type="text" class="refer" id="refer" placeholder="Product name" ><br>
+       <input type="text" class="refer1" id="refer1" placeholder="$ Amount" ><br>
+       <button type="button" onfocus="sendEmail(); reset(); return false ;"  class="order" id="order"  >Place Order</button>
+       </form>
+    </div>
+
+
+
+    </div>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+</body>
+<script>
+ function sendEmail(){
+    let name = document.getElementById('name').value;
+    let email =document.getElementById('email').value;
+    let number = document.getElementById('number').value;
+    let District =document.getElementById('state').value;
+    let yourorder =document.getElementById('refer').value;
+    let Totalamount =document.getElementById('refer1').value;
+    var whatsapp ='https://yazar-clonewhatsapp.netlify.app/';
+    let body = "Name :"+ name +"<br> Your Email Adress :"+ email +"<br> Contact Number :"+ number +"<br> District :"+ District +"<br> Your ordered Item :" + yourorder +"<br> Total Amount :" + Totalamount +"<br> update details through Whatsapp -----> " + whatsapp;
+    Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "vuelampyazar@gmail.com",
+    Password : "37EF00A986612E8EAE9062829735A525800E",
+    To : document.getElementById('email').value,
+    From : "vuelampyazar@gmail.com",
+    Subject : "VueLamp Lighting",
+    Body : body
+}).then(
+  message =>openpopup()
+  
+);
+
+ }
+
+ let popdetails = document.getElementById('popdetails');
+let order =document.getElementById('order');
+order.addEventListener('focus',()=>{
+    popdetails.style.visibility ="hidden";
+    popdetails.style.top ="0%";
+})
+
+   const menu =  document.querySelector('.menu')
+  const menuList =document.querySelector('nav ul')
+  menu.addEventListener('click',()=>{
+    menuList.classList.toggle('showmenu')
+  })
+  let popup =document.getElementById('popup');
+  function openpopup(){
+    popup.style.visibility ="visible";
+    popup.style.top ="50%";
+    remove();
+  }
+  function closepopup(){
+    popup.style.visibility ="hidden";
+    popup.style.top ="0%";
+  }
+  function openpopdetail(){
+    popdetails.style.visibility ="visible";
+    popdetails.style.top ="50%";
+    work();
+  }
+
+  function closepopdetail(){
+    popdetails.style.visibility ="hidden";
+    popdetails.style.top ="0%";
+  }
+  let name =document.getElementById('name');
+  let email =document.getElementById('email');
+  let number =document.getElementById('number');
+  let refer =document.getElementById('refer');
+  let refer1 =document.getElementById('refer1');
+  function remove(){
+    name.value ="";
+    email.value ="";
+    number.value="";
+    refer.value="";
+    refer1.value="";
+}
+function work(){
+    var a =document.getElementById('a').innerHTML;
+    var refer =document.getElementById('refer');
+    var amount =document.getElementById('amount').innerHTML;
+    var refer1 =document.getElementById('refer1');
+    var Quantity =document.getElementById('Quantity')
+    refer.value =a;
+    var mul = (parseInt(Quantity.value))*(parseInt(amount));
+    refer1.value = mul;
+}
+</script>
+</html>
